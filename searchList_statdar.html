@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common_reset_app.css"/>
+		<link rel="stylesheet" type="text/css" href="css/searchMobile.css"/>
+		<link rel="stylesheet" type="text/css" href="css/border.css"/>
+		<style type="text/css">
+			.searchchoose {
+				white-space: nowrap;
+				color:#333;
+				z-index: 1;
+				padding: 0;
+				line-height: .7rem;
+				padding: 0 .24rem;
+				box-sizing: border-box;
+			    padding-right: 1.28rem;
+			    width: 9.124rem;
+			    position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<!--顶部搜索-->
+		<div class="top_search">
+			<div class="top_search_L">
+				<img class="top_search_icon" src="img/icon_magnifier.png">
+                <input id="top_search_input" class="top_search_input" type="search" oninput="changeinput()" name="" id="keyword" value="" placeholder="国军标">
+				<img class="top_search_close" src="img/pingzheng_shanchu@3x.png">
+			</div>
+			<img class="top_search_cancel" src="img/search_cancel.png" alt="" />
+		</div>
+		<!--分类选项卡-->
+		<div class="searchchoose-wai border-bottom">
+			<div class="searchchoose">
+				<a class="tab_jump" data-href="index.html">
+					<div class="search_tab">
+						<div class="search_class">综合</div>
+						<span class="color-border"></span>
+					</div>
+				</a>
+				<a class="tab_jump" data-href="searchList_statdar.html">
+					<div class="filter_active search_tab choice">
+						<div class="search_class">标准</div>
+						<span class="color-border"></span>
+					</div>
+				</a>
+				<a class="tab_jump" data-href="searchList_course.html">
+					<div class="search_tab">
+						<div class="search_class">课程</div>
+						<span class="color-border"></span>
+					</div>
+				</a>
+				<a class="tab_jump" data-href="searchList_goods.html">
+					<div class="filter_active search_tab">
+						<div class="search_class">商品</div>
+						<span class="color-border"></span>
+					</div>
+				</a>
+				<a class="tab_jump" data-href="searchList_article.html">
+					<div class="search_tab">
+						<div class="search_class">文章</div>
+						<span class="color-border"></span>
+					</div>
+				</a>
+				<a class="tab_jump" data-href="searchList_questionsAndAnswers.html">
+					<div class="search_tab">
+						<div class="search_class">问答</div>
+						<span class="color-border"></span>
+					</div>
+				</a>
+				<a class="tab_jump" data-href="searchList_user.html">
+					<div class="search_tab">
+						<div class="search_class">用户</div>
+						<span class="color-border"></span>
+					</div>
+				</a>
+			</div>
+			<div class="search_screen">
+				<div class="search_screen_text">筛选</div>
+				<div class="search_screen_imgbox"><img class="search_screen_icon" src="img/icon_screen.png"/></div>
+			</div>
+		</div>
+		<!--标准-->
+		<div class="bgfff_padding24 margin_top175">
+			<div class="stand_list border-bottom">
+				<div class="stand_info">
+					<div class="standar_label">有效</div>
+					<div class="stand_num">GB/T 19000-2016</div>
+					<div class="standar_price">&yen;24.<span class="price_s">00</span> ~ 18.<span class="price_s">00</span></div>
+				</div>
+				<div class="stand_title">
+					舰空导弹国军标系统设计定型靶场试验规程
+				</div>
+				<div class="stand_msg">
+					载体：<span>纸质/电子</span>&nbsp;&nbsp;&nbsp;
+					来源：<span>中国航空工业技术研究所</span>
+				</div>
+				<img class="stand_car" src="img/stand_car.png"/>
+			</div>
+		</div>
+		
+		<!--弹框遮罩-->
+		<div class="showbox" style="transition: opacity 0.5s ease 0s;"></div>
+		<!--筛选弹框-->
+		<div class="filterBox">
+			<div class="filter_content">
+				
+			</div>
+			<div class="filter_btn">
+		        <div class="filter_reset">清空重置</div>
+		        <div class="filter_confirm ">确定</div>
+		    </div>
+		</div>
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/searchMobile.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	/*筛选弹框*/
+	$(".search_screen").click(function () {
+	    $("body").addClass("body");
+	    $(".showbox")[0].style.display = "block";
+	    $(".showbox")[0].style.transition = "opacity .5s";
+	    $(".filterBox")[0].style.right = "0px";
+	    $(".filterBox")[0].style.transition = "right 1s";
+	});
+	//点击遮罩层 消失
+	$(".showbox").click(function() {
+	    $("body").removeClass("body");
+	    $(".showbox")[0].style.display = "none";
+	    $(".showbox")[0].style.transition = "display 1s";
+	    $(".filterBox")[0].style.right = "-100%";
+	    $(".filterBox")[0].style.transition = "right 1s";
+	});
+	</script>
+</html>
