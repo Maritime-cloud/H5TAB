@@ -17,12 +17,12 @@
 			    padding-right: constant(safe-area-inset-right); //如果未竖屏时为0                
 			    padding-bottom: constant(safe-area-inset-bottom);       
 			} */
-			// 设置固定定位,将bottom设置为0
+			/*设置固定定位,将bottom设置为0*/
 			.footerBox {
 				position:fixed;
 				bottom: 0;
 			}
-			// 判断iphoneX 将 footerBox 的 padding-bottom 填充到最底部
+			/* 判断iphoneX 将 footerBox 的 padding-bottom 填充到最底部*/
 			@supports (bottom: env(safe-area-inset-bottom)) {
 				.footerBox {
 					padding-bottom: env(safe-area-inset-bottom);
